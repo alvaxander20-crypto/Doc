@@ -1,0 +1,179 @@
+/* General y Animaciones */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+* { box-sizing: border-box; font-family: Arial, sans-serif; transition: 0.3s ease; }
+
+header { background: #d32f2f; color: white; padding: 1rem; }
+
+.navbar { display: flex; justify-content: space-between; align-items: center; }
+
+.nav-links { list-style: none; display: flex; gap: 20px; }
+
+.nav-links a { color: white; text-decoration: none; font-weight: bold; }
+
+/* Contenedores */
+.nosotros-container, .form-container, .consultar-citas {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.nosotros-container { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
+
+/* Grid de Servicios y Especialistas */
+.servicios-grid, .especialistas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 2rem;
+}
+
+.servicio-card, .especialista-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    background: white;
+}
+
+/* Animación exigida: Aparecer suavemente */
+.servicio-card, .especialista-card {
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.especialista-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-color: #d32f2f;
+}
+
+/* Formulario */
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: auto;
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+input, select, button { padding: 10px; border-radius: 5px; border: 1px solid #ccc; }
+
+button { background: #d32f2f; color: white; cursor: pointer; border: none; }
+
+button:hover { background: #b71c1c; letter-spacing: 1px; }
+
+/* Footer */
+footer { background: #d32f2f; color: white; text-align: center; padding: 1.5rem; margin-top: 20px; }
+
+.social-icons a { color: white; margin: 0 10px; text-decoration: none; font-size: 1.2rem; }
+
+/* MEDIA QUERIES (Corrección del menú) */
+@media (max-width: 768px) {
+    .navbar, .nav-links { flex-direction: column; gap: 10px; text-align: center; }
+    .nosotros-container { flex-direction: column; text-align: center; }
+}
+
+/* Ajuste global para imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
+
+.servicio-card img, .especialista-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Recorta la imagen para que siempre sea cuadrada y no se estire */
+    margin: 0 auto 10px;
+    border-radius: 50%; /* Opcional: hace las fotos de médicos circulares */
+}
+
+/* Estilo para los iconos de redes sociales */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.social-img {
+    width: 30px; /* Tamaño adecuado para el footer */
+    height: 30px;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transición exigida */
+}
+
+/* Efecto al posicionarse (Hover) solicitado en el PDF */
+.social-img:hover {
+    transform: scale(1.2); /* Animación de aumento */
+    filter: brightness(1.2); /* Cambio de brillo/color */
+}
+
+/* Estilo para las tarjetas de especialistas */
+.especialista-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    background: white;
+    /* Aseguramos que el contenedor tenga una altura máxima para evitar desbordamientos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ajuste específico para la IMAGEN del especialista */
+.especialista-card img {
+    width: 150px; /* Ancho que desees para la foto */
+    height: 150px; /* Altura igual al ancho para que sea cuadrada */
+    border-radius: 5px; /* Bordes suaves */
+    margin-bottom: 10px;
+    
+    /* --- AQUÍ ESTÁ LA SOLUCIÓN --- */
+    object-fit: cover; /* Mantiene la proporción de la imagen y llena el cuadrado de 150x150 */
+    object-position: top; /* <--- ALINEA LA IMAGEN A LA PARTE SUPERIOR, MOSTRANDO LA CARA */
+    /* ------------------------------ */
+    
+    display: block;
+}
+
+input[type="date"] {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: white;
+    color: #333;
+}
+
+/* Corrección del Logo */
+.logo {
+    display: flex;
+    align-items: center; /* Centra verticalmente imagen y texto */
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo img {
+    height: 50px; /* Tamaño fijo para que no desplace el menú */
+    width: auto;
+    border-radius: 5px;
+    display: inline-block; /* Evita que el reset global de img lo bloquee */
+}
+
+/* Asegura que el navbar no se rompa en pantallas pequeñas */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que baje el menú si no hay espacio */
+}
