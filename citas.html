@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citas - Salud & Bienestar</title>
+    <link rel="stylesheet" href="CSS/medic.css"> 
+    <script src="JS/medic.js" defer></script>
+    </head>
+<body>
+    <header>
+        <nav class="navbar">
+         <div class="logo">
+    <img src="img/logo.png" alt="Logo Clínica">
+    <span>Salud & Bienestar</span>
+</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Regresar al Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <h2>Pedir Cita Médica</h2>
+            <form id="formCita">
+                <input type="text" id="nombre" placeholder="Nombre Completo" required>
+                <input type="number" id="cedula" placeholder="Cédula" required>
+                <input type="email" id="correo" placeholder="Correo Electrónico" required>
+                <select id="especialidad" required>
+                    <option value="">Seleccione Especialidad</option>
+                    <option value="Cardiología">Cardiología</option>
+                    <option value="Pediatría">Pediatría</option>
+                    <option value="Traumatología">Traumatología</option>
+                </select>
+                <input type="date" id="fecha" required>
+                <button type="submit">Agendar Cita ahora</button>
+            </form>
+        </section>
+
+        <section class="consultar-citas">
+            <h3>Mis Citas Guardadas (Valencia)</h3>
+            <div id="lista-citas"></div>
+        </section>
+    </main>
+</body>
+</html>
