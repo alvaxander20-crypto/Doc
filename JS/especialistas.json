@@ -1,0 +1,5 @@
+[
+    { "nombre": "Dr. Armando Casas", "especialidad": "Cardiología", "horario": "8am - 12pm", "consultorio": "102", "foto": "img/doc2.jpg" },
+    { "nombre": "Dra. Elena Nito", "especialidad": "Pediatría", "horario": "2pm - 6pm", "consultorio": "205", "foto": "img/doc1.jpg" },
+    { "nombre": "Dr. Aquiles Brinco", "especialidad": "Traumatología", "horario": "9am - 1pm", "consultorio": "110", "foto": "img/doc3.jpg" }
+]
