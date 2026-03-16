@@ -33,6 +33,13 @@ header { background: #d32f2f; color: white; padding: 1rem; }
     padding: 2rem;
 }
 
+.section-title {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .servicio-card, .especialista-card {
     border: 1px solid #ddd;
     padding: 15px;
